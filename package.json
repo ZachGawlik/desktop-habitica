@@ -1,0 +1,28 @@
+{
+  "name": "desktop-habitica",
+  "productName": "Habitica",
+  "version": "0.1.0",
+  "description": "Unofficial Habitica desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachGawlik/desktop-habitica.git"
+  },
+  "keywords": [
+    "habitica",
+    "habitRPG",
+    "electron-app"
+  ],
+  "author": "Zach Gawlik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZachGawlik/desktop-habitica/issues"
+  },
+  "homepage": "https://github.com/ZachGawlik/desktop-habitica#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.5"
+  }
+}
