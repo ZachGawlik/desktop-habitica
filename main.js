@@ -1,5 +1,7 @@
 'use strict';
 
+const fs = require('fs');
+const path = require('path');
 const electron = require('electron');
 const appMenu = require('./menu');
 const app = electron.app;
@@ -34,6 +36,12 @@ app.on('ready', () => {
     }
 
     createWindow();
+
+    const page = mainWindow.webContents;
+    page.on('dom-ready', () => {
+        page.insertCSS(
+            fs.readFileSync(path.join(__dirname, 'browser.css'), 'utf8'));
+    })
 });
 
 // Quit when all windows are closed, except on OS X
