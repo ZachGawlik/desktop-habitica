@@ -106,7 +106,7 @@ const macTemplate = [
             {
                 label: `Habitica Website...`,
                 click() {
-                    shell.openExternal('http://habitica.com/');
+                    shell.openExternal('https://habitica.com/');
                 }
             }
         ]

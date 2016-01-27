@@ -4,16 +4,23 @@ const fs = require('fs');
 const path = require('path');
 const electron = require('electron');
 const appMenu = require('./menu');
+const storage = require('./storage');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
 
 function createWindow() {
+    const lastWindowBounds = storage.get('lastWindowBounds') || {width: 1000, height: 800};
+
     mainWindow = new BrowserWindow({
         title: app.getName(),
-        width: 1000,
-        height: 800,
+        x: lastWindowBounds.x,
+        y: lastWindowBounds.y,
+        width: lastWindowBounds.width,
+        height: lastWindowBounds.height,
+        minWidth: 500,
+        minHeight: 300,
         webPreferences: {
             nodeIntegration: false
         }
@@ -49,6 +56,10 @@ app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit();
     }
+});
+
+app.on('before-quit', () => {
+    storage.set('lastWindowBounds', mainWindow.getBounds())
 });
 
 // On OS X, recreate app window if dock icon is clicked and no windows are open
