@@ -59,7 +59,9 @@ app.on('window-all-closed', () => {
 });
 
 app.on('before-quit', () => {
-    storage.set('lastWindowBounds', mainWindow.getBounds())
+    if (mainWindow) {
+        storage.set('lastWindowBounds', mainWindow.getBounds())
+    }
 });
 
 // On OS X, recreate app window if dock icon is clicked and no windows are open
