@@ -4,6 +4,6 @@ Built for OS X, created with Electron. I found that having to open a fully-funct
 
 #### Installation
 
-[Download the release](), and move `Habitica.app` into your Applications directory.
+[Download the release](https://github.com/ZachGawlik/desktop-habitica/releases/download/1.0.0/Habitica-1.0.0.app.zip), and move `Habitica.app` into your Applications directory.
 
 Alternatively, you can build it yourself by getting the source, running `npm install && npm run build`, and opening the app found inside the `dist` folder.
